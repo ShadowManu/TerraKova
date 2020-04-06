@@ -8,8 +8,8 @@ import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import org.apache.logging.log4j.LogManager
 
-public class CommonProxy {
-    private val logger = LogManager.getLogger();
+class CommonProxy {
+    private val logger = LogManager.getLogger()
 
     @SubscribeEvent
     fun registerBlocks(event: RegistryEvent.Register<Block>) {
@@ -19,19 +19,19 @@ public class CommonProxy {
 
     @SubscribeEvent
     fun registerTiles(event: RegistryEvent.Register<TileEntityType<*>>) {
-        logger.info("Hello from register tiles!");
+        logger.info("Hello from register tiles!")
         // Registry.tiles.forEach { event.registry.register(it) }
     }
 
     @SubscribeEvent
     fun registerItems(event: RegistryEvent.Register<Item>) {
-        logger.info("Hello from register items!");
+        logger.info("Hello from register items!")
         // Registry.items.forEach { event.registry.register(it) }
     }
 
     @SubscribeEvent
     fun registerContainers(event: RegistryEvent.Register<ContainerType<*>>) {
-        logger.info("Hello from register containers!");
+        logger.info("Hello from register containers!")
         // Registry.containers.forEach { event.registry.register(it) }
     }
 }

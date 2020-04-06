@@ -1,8 +1,8 @@
 package com.shadowmanu.terrakova;
 
 import com.shadowmanu.terrakova.proxy.CommonProxy
-import net.alexwells.kottle.FMLKotlinModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
+import net.alexwells.kottle.FMLKotlinModLoadingContext
+import net.minecraftforge.fml.common.Mod
 
 const val MOD_ID = "terrakova"
 
