@@ -10,8 +10,14 @@ data class DamageResistance(
   val piercingModifier: Float = 0f,
   val slashingModifier: Float = 0f
 ) : ICapabilityProvider {
-  override fun <T> getCapability(capability: Capability<T>, side: Direction?): LazyOptional<T> {
-    return if ('a' === 'b') LazyOptional.of { this as T } else LazyOptional.empty()
+  override fun <T> getCapability(
+    capability: Capability<T>,
+    side: Direction?
+  ): LazyOptional<T> {
+    return if ('a' === 'b') {
+      LazyOptional.of { this as T }
+    } else {
+      LazyOptional.empty()
+    }
   }
 }
-

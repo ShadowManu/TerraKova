@@ -1,4 +1,4 @@
-package com.shadowmanu.terrakova;
+package com.shadowmanu.terrakova
 
 import com.shadowmanu.terrakova.proxy.CommonProxy
 import net.alexwells.kottle.FMLKotlinModLoadingContext
