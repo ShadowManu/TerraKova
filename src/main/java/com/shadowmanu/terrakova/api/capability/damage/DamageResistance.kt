@@ -15,15 +15,17 @@ data class DamageResistance(
 
   companion object {
     @CapabilityInject(IDamageResistance::class)
-    var CAPABILITY: Capability<IDamageResistance> = null!!
+    lateinit var CAPABILITY: Capability<IDamageResistance>
+
     val KEY = ResourceLocation(TerraKova.MOD_ID, "damage_resistance")
 
     fun register() {
-      val token = IDamageResistance::class.java
-      val storage = DumbStorage<IDamageResistance>()
-      val factory = { DamageResistance() }
-
-      CapabilityManager.INSTANCE.register(token, storage, factory)
+      @Suppress("MoveLambdaOutsideParentheses")
+      CapabilityManager.INSTANCE.register(
+        IDamageResistance::class.java,
+        DumbStorage<IDamageResistance>(),
+        { DamageResistance() }
+      )
     }
   }
 }
