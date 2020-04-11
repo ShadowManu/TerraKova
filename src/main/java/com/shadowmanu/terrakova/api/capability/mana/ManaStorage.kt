@@ -20,6 +20,6 @@ class ManaStorage : Capability.IStorage<IMana> {
     instance: IMana,
     side: Direction
   ): INBT {
-    return FloatNBT.valueOf(instance.getValue())
+    return FloatNBT.valueOf(instance.value)
   }
 }
