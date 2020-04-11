@@ -1,6 +1,7 @@
 package com.shadowmanu.terrakova.api.capability.damage
 
 import com.shadowmanu.terrakova.TerraKova
+import com.shadowmanu.terrakova.api.capability.DumbStorage
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.common.capabilities.Capability
 import net.minecraftforge.common.capabilities.CapabilityInject
@@ -19,7 +20,7 @@ data class DamageResistance(
 
     fun register() {
       val token = IDamageResistance::class.java
-      val storage = null
+      val storage = DumbStorage<IDamageResistance>()
       val factory = { DamageResistance() }
 
       CapabilityManager.INSTANCE.register(token, storage, factory)
