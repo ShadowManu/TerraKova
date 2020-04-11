@@ -1,23 +1,28 @@
 package com.shadowmanu.terrakova.api.capability.damage
 
-import net.minecraft.util.Direction
+import com.shadowmanu.terrakova.TerraKova
+import net.minecraft.util.ResourceLocation
 import net.minecraftforge.common.capabilities.Capability
-import net.minecraftforge.common.capabilities.ICapabilityProvider
-import net.minecraftforge.common.util.LazyOptional
+import net.minecraftforge.common.capabilities.CapabilityInject
+import net.minecraftforge.common.capabilities.CapabilityManager
 
 data class DamageResistance(
-  val crushingModifier: Float = 0f,
-  val piercingModifier: Float = 0f,
-  val slashingModifier: Float = 0f
-) : ICapabilityProvider {
-  override fun <T> getCapability(
-    capability: Capability<T>,
-    side: Direction?
-  ): LazyOptional<T> {
-    return if ('a' === 'b') {
-      LazyOptional.of { this as T }
-    } else {
-      LazyOptional.empty()
+  override val crushing: Float = 0f,
+  override val piercing: Float = 0f,
+  override val slashing: Float = 0f
+) : IDamageResistance {
+
+  companion object {
+    @CapabilityInject(IDamageResistance::class)
+    var CAPABILITY: Capability<IDamageResistance> = null!!
+    val KEY = ResourceLocation(TerraKova.MOD_ID, "damage_resistance")
+
+    fun register() {
+      val token = IDamageResistance::class.java
+      val storage = null
+      val factory = { DamageResistance() }
+
+      CapabilityManager.INSTANCE.register(token, storage, factory)
     }
   }
 }
