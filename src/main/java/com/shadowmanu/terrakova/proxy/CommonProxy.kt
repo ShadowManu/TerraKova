@@ -1,37 +1,31 @@
 package com.shadowmanu.terrakova.proxy
 
+import com.shadowmanu.terrakova.Registry
 import net.minecraft.block.Block
 import net.minecraft.inventory.container.ContainerType
 import net.minecraft.item.Item
 import net.minecraft.tileentity.TileEntityType
 import net.minecraftforge.event.RegistryEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
-import org.apache.logging.log4j.LogManager
 
-class CommonProxy {
-    private val logger = LogManager.getLogger()
+abstract class CommonProxy {
+  @SubscribeEvent
+  fun registerBlocks(event: RegistryEvent.Register<Block>) {
+    Registry.blocks.forEach { event.registry.register(it) }
+  }
 
-    @SubscribeEvent
-    fun registerBlocks(event: RegistryEvent.Register<Block>) {
-        logger.info("Hello from register block!")
-        // Registry.blocks.forEach { event.registry.register(it) }
-    }
+  @SubscribeEvent
+  fun registerTiles(event: RegistryEvent.Register<TileEntityType<*>>) {
+    Registry.tiles.forEach { event.registry.register(it) }
+  }
 
-    @SubscribeEvent
-    fun registerTiles(event: RegistryEvent.Register<TileEntityType<*>>) {
-        logger.info("Hello from register tiles!")
-        // Registry.tiles.forEach { event.registry.register(it) }
-    }
+  @SubscribeEvent
+  fun registerItems(event: RegistryEvent.Register<Item>) {
+    Registry.items.forEach { event.registry.register(it) }
+  }
 
-    @SubscribeEvent
-    fun registerItems(event: RegistryEvent.Register<Item>) {
-        logger.info("Hello from register items!")
-        // Registry.items.forEach { event.registry.register(it) }
-    }
-
-    @SubscribeEvent
-    fun registerContainers(event: RegistryEvent.Register<ContainerType<*>>) {
-        logger.info("Hello from register containers!")
-        // Registry.containers.forEach { event.registry.register(it) }
-    }
+  @SubscribeEvent
+  fun registerContainers(event: RegistryEvent.Register<ContainerType<*>>) {
+    Registry.containers.forEach { event.registry.register(it) }
+  }
 }
