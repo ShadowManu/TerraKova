@@ -19,8 +19,8 @@ class DamageResistanceHandler {
     } ?: return
 
     event.addCapability(
-      DamageResistance.KEY,
-      GenericProvider(resistance, DamageResistance.CAPABILITY)
+      DamageResistanceStatic.KEY,
+      GenericProvider(resistance, DamageResistanceStatic.CAPABILITY)
     )
   }
 }
