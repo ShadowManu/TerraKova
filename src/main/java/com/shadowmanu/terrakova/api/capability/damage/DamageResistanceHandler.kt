@@ -1,6 +1,6 @@
 package com.shadowmanu.terrakova.api.capability.damage
 
-import com.shadowmanu.terrakova.utils.GenericProvider
+import com.shadowmanu.terrakova.api.capability.GenericProvider
 import net.minecraft.entity.Entity
 import net.minecraft.entity.monster.*
 import net.minecraftforge.event.AttachCapabilitiesEvent
@@ -20,7 +20,10 @@ class DamageResistanceHandler {
 
     event.addCapability(
       DamageResistanceStatic.KEY,
-      GenericProvider(resistance, DamageResistanceStatic.CAPABILITY)
+      GenericProvider(
+        resistance,
+        DamageResistanceStatic.CAPABILITY
+      )
     )
   }
 }

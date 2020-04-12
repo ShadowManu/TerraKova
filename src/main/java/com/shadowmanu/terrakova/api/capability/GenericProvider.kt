@@ -1,4 +1,4 @@
-package com.shadowmanu.terrakova.utils
+package com.shadowmanu.terrakova.api.capability
 
 import net.minecraft.util.Direction
 import net.minecraftforge.common.capabilities.Capability
