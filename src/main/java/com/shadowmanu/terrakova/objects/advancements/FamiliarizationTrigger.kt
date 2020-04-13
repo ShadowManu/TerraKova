@@ -16,7 +16,7 @@ class FamiliarizationTrigger :
     val ID = ResourceLocation(TerraKova.MOD_ID, "familiarity_changed")
   }
 
-  override fun getId() = FamiliarizationTrigger.ID
+  override fun getId() = ID
 
   override fun deserializeInstance(
     json: JsonObject,
