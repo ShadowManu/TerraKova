@@ -1,4 +1,4 @@
-package com.shadowmanu.terrakova.utils
+package com.shadowmanu.terrakova.util
 
 import java.util.function.BiConsumer
 

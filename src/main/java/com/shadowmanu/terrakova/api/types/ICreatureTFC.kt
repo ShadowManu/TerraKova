@@ -1,6 +1,6 @@
 package com.shadowmanu.terrakova.api.types
 
-import com.shadowmanu.terrakova.utils.KBiConsumer
+import com.shadowmanu.terrakova.util.KBiConsumer
 import net.minecraft.entity.LivingEntity
 import net.minecraft.world.biome.Biome
 import java.util.*
